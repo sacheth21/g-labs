@@ -1,90 +1,703 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>G-LABS</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
+  <title>G-LABS | Innovation & Development</title>
+  <meta name="description" content="G-LABS - A showcase of innovative projects and development work by K U SACHETH">
+  <meta name="keywords" content="web development, projects, portfolio, innovation, coding">
+  
   <!-- Favicons -->
   <link href="assets/img/Screenshot 2025-05-23 075800.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+  
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="sheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
+  
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #4154f1;
+      --secondary-color: #717ff5;
+      --text-color: #444444;
+      --light-bg: #f6f9ff;
+      --dark-bg: #0f2945;
+    }
+    
+    body {
+      font-family: "Roboto", sans-serif;
+      color: var(--text-color);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Poppins", sans-serif;
+    }
+    
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+    }
+    
+    .header.sticked {
+      background: rgba(255, 255, 255, 0.98);
+    }
+    
+    .logo h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 0;
+      line-height: 1;
+    }
+    
+    .navmenu ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+    
+    .navmenu li {
+      position: relative;
+    }
+    
+    .navmenu a, .navmenu a:focus {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      font-family: "Poppins", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-color);
+      white-space: nowrap;
+      transition: 0.3s;
+    }
+    
+    .navmenu a i, .navmenu a:focus i {
+      font-size: 12px;
+      line-height: 0;
+      margin-left: 5px;
+    }
+    
+    .navmenu a:hover, .navmenu .active, .navmenu .active:focus, .navmenu li:hover > a {
+      color: var(--primary-color);
+    }
+    
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      padding: 80px 0 60px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    
+    .hero:before {
+      content: "";
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 3;
+    }
+    
+    .hero h2 {
+      margin: 0;
+      font-size: 48px;
+      font-weight: 700;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    .hero p {
+      margin: 10px 0 0 0;
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .hero .btn-get-started {
+      margin-top: 30px;
+      line-height: 0;
+      padding: 15px 30px;
+      border-radius: 4px;
+      transition: 0.5s;
+      color: #fff;
+      background: var(--primary-color);
+      box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+    }
+    
+    .hero .btn-get-started:hover {
+      background: var(--secondary-color);
+      box-shadow: 0px 5px 30px rgba(113, 127, 245, 0.4);
+    }
+    
+    .section {
+      padding: 60px 0;
+      overflow: hidden;
+    }
+    
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      color: var(--dark-bg);
+    }
+    
+    .section-title h2:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--primary-color);
+      bottom: 0;
+      left: calc(50% - 25px);
+    }
+    
+    .about .content h3 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    
+    .about .content ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .about .content ul li {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .about .content ul strong {
+      margin-right: 10px;
+    }
+    
+    .about .content ul i {
+      font-size: 16px;
+      margin-right: 5px;
+      color: var(--primary-color);
+      line-height: 0;
+    }
+    
+    .projects .portfolio-item {
+      margin-bottom: 30px;
+    }
+    
+    .projects #portfolio-flters {
+      padding: 0;
+      margin: 0 auto 20px auto;
+      list-style: none;
+      text-align: center;
+    }
+    
+    .projects #portfolio-flters li {
+      cursor: pointer;
+      display: inline-block;
+      padding: 8px 16px 10px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text-color);
+      margin: 0 3px 10px 3px;
+      transition: all ease-in-out 0.3s;
+      border-radius: 4px;
+    }
+    
+    .projects #portfolio-flters li:hover, .projects #portfolio-flters li.filter-active {
+      color: #fff;
+      background: var(--primary-color);
+    }
+    
+    .projects .portfolio-wrap {
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      z-index: 1;
+    }
+    
+    .projects .portfolio-wrap::before {
+      content: "";
+      background: rgba(255, 255, 255, 0.7);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: 0.3s;
+      z-index: 2;
+      opacity: 0;
+    }
+    
+    .projects .portfolio-wrap .portfolio-info {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      transition: all ease-in-out 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    
+    .projects .portfolio-wrap .portfolio-info h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark-bg);
+      margin-bottom: 0;
+    }
+    
+    .projects .portfolio-wrap .portfolio-info p {
+      color: #5a6c7d;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    
+    .projects .portfolio-wrap .portfolio-links {
+      text-align: center;
+      z-index: 4;
+    }
+    
+    .projects .portfolio-wrap .portfolio-links a {
+      color: #fff;
+      background: var(--primary-color);
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      opacity: 0;
+    }
+    
+    .projects .portfolio-wrap:hover::before {
+      opacity: 1;
+    }
+    
+    .projects .portfolio-wrap:hover .portfolio-info {
+      opacity: 1;
+    }
+    
+    .projects .portfolio-wrap:hover .portfolio-links a {
+      opacity: 1;
+    }
+    
+    .skills .progress {
+      height: 60px;
+      display: block;
+      background: none;
+      border-radius: 0;
+    }
+    
+    .skills .progress .skill {
+      padding: 0;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      display: block;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      color: var(--dark-bg);
+    }
+    
+    .skills .progress .skill .val {
+      float: right;
+      font-style: normal;
+    }
+    
+    .skills .progress-bar-wrap {
+      background: #e9ecef;
+      height: 10px;
+      border-radius: 10px;
+    }
+    
+    .skills .progress-bar {
+      height: 10px;
+      transition: 0.9s;
+      background-color: var(--primary-color);
+      border-radius: 10px;
+    }
+    
+    .contact .info-item {
+      background: #f4f7fc;
+      padding: 30px;
+      border-radius: 8px;
+      height: 100%;
+    }
+    
+    .contact .info-item i {
+      font-size: 24px;
+      color: var(--primary-color);
+      float: left;
+      width: 44px;
+      height: 44px;
+      background: #e9ecef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .contact .info-item h4 {
+      padding: 0 0 0 60px;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--dark-bg);
+    }
+    
+    .contact .info-item p {
+      padding: 0 0 0 60px;
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #5a6c7d;
+    }
+    
+    .contact .info-item:hover i {
+      background: var(--primary-color);
+      color: #fff;
+    }
+    
+    .footer {
+      font-size: 14px;
+      background: var(--dark-bg);
+      padding: 30px 0;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .footer .copyright {
+      text-align: center;
+    }
+    
+    .footer .credits {
+      padding-top: 5px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .footer .credits a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: 0.3s;
+    }
+    
+    .footer .credits a:hover {
+      color: #fff;
+    }
+  </style>
 </head>
-
 <body class="index-page">
-
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">G-LABS</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-         
-          
-          <li class="dropdown"><a href="#"><span>MY PROJECTS</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              </li>
-              <li><a href="https://sacheth21.github.io/BMI-CALCULATOR/">bmi calculator</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="https://sacheth21.github.io/BMI-CALCULATOR/">BMI Calculator</a></li>
+              <li><a href="#">Project 2</a></li>
+              <li><a href="#">Project 3</a></li>
+              <li><a href="#">Project 4</a></li>
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
 
   <main class="main">
-
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
-
       <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h2>Welcome to My Website</h2>
-            <p>MADE BY K U SACHETH</p>
+            <h2>Welcome to G-LABS</h2>
+            <p>INNOVATION & DEVELOPMENT BY K U SACHETH</p>
+            <a href="#about" class="btn-get-started">Get Started</a>
           </div>
         </div>
       </div>
+    </section><!-- /Hero Section -->
 
-    </section><!-- /Hero Section --
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <h2>About G-LABS</h2>
+            <p>
+              G-LABS is a digital innovation hub where creativity meets technology. We specialize in developing cutting-edge solutions that address real-world challenges.
+            </p>
+            <p>
+              Founded by K U SACHETH, our mission is to push the boundaries of what's possible through code, design, and innovative thinking.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Founded:</strong> <span>2023</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Specialization:</strong> <span>Web Development</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Projects:</strong> <span>10+ Completed</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Technologies:</strong> <span>HTML, CSS, JS</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Frameworks:</strong> <span>Bootstrap, React</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>contact@glabs.com</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/about.jpg" class="img-fluid rounded-4" alt="About G-LABS">
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
 
-           
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>My technical expertise and competencies</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row skills-content skills-animation">
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill">HTML <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">CSS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill">Bootstrap <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">React <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">UI/UX Design <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Skills Section -->
 
-    
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>Check out some of my recent work</p>
+      </div>
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Applications</li>
+            <li data-filter=".filter-web">Web</li>
+            <li data-filter=".filter-tools">Tools</li>
+          </ul>
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-wrap">
+                <img src="assets/img/project-1.jpg" class="img-fluid" alt="BMI Calculator">
+                <div class="portfolio-info">
+                  <h4>BMI Calculator</h4>
+                  <p>Health & Fitness</p>
+                  <div class="portfolio-links">
+                    <a href="https://sacheth21.github.io/BMI-CALCULATOR/" title="More Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <div class="portfolio-wrap">
+                <img src="assets/img/project-2.jpg" class="img-fluid" alt="Portfolio Website">
+                <div class="portfolio-info">
+                  <h4>Portfolio Website</h4>
+                  <p>Web Development</p>
+                  <div class="portfolio-links">
+                    <a href="#" title="More Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-tools">
+              <div class="portfolio-wrap">
+                <img src="assets/img/project-3.jpg" class="img-fluid" alt="Task Manager">
+                <div class="portfolio-info">
+                  <h4>Task Manager</h4>
+                  <p>Productivity Tool</p>
+                  <div class="portfolio-links">
+                    <a href="#" title="More Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Projects Section -->
 
-           
-      
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Get in touch with me</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>Bangalore, India</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p>+91 1234567890</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Me</h3>
+                  <p>contact@glabs.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required>
+                </div>
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required>
+                </div>
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>G-LABS</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">K U SACHETH</a>
+      </div>
+    </div>
+  </footer>
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -103,7 +716,120 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  
+  <!-- Custom JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+      
+      // Skills animation
+      let skillBars = document.querySelectorAll('.progress-bar');
+      
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+      };
+      
+      const skillObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let skillBar = entry.target;
+            let skillValue = skillBar.parentElement.previousElementSibling.querySelector('.val').textContent;
+            skillBar.style.width = skillValue;
+            skillObserver.unobserve(skillBar);
+          }
+        });
+      }, observerOptions);
+      
+      skillBars.forEach(bar => {
+        skillObserver.observe(bar);
+      });
+      
+      // Portfolio isotope and filter
+      let portfolioContainer = document.querySelector('.isotope-container');
+      if (portfolioContainer) {
+        let portfolioIsotope = new Isotope(portfolioContainer, {
+          itemSelector: '.portfolio-item',
+          layoutMode: 'masonry'
+        });
+        
+        let portfolioFilters = document.querySelectorAll('.portfolio-filters li');
+        
+        portfolioFilters.forEach(filter => {
+          filter.addEventListener('click', function(e) {
+            e.preventDefault();
+            portfolioFilters.forEach(el => el.classList.remove('filter-active'));
+            this.classList.add('filter-active');
+            
+            portfolioIsotope.arrange({
+              filter: this.getAttribute('data-filter')
+            });
+          });
+        });
+      }
+      
+      // Header scroll effect
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 100) {
+          header.classList.add('sticked');
+        } else {
+          header.classList.remove('sticked');
+        }
+      });
+      
+      // Mobile navigation toggle
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.querySelector('.navmenu');
+      
+      mobileNavToggle.addEventListener('click', function() {
+        navmenu.classList.toggle('mobile-nav-active');
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+      });
+      
+      // Close mobile nav when clicking on a link
+      document.querySelectorAll('.navmenu a').forEach(link => {
+        link.addEventListener('click', function() {
+          navmenu.classList.remove('mobile-nav-active');
+          mobileNavToggle.classList.add('bi-list');
+          mobileNavToggle.classList.remove('bi-x');
+        });
+      });
+      
+      // Scroll top button
+      const scrollTop = document.getElementById('scroll-top');
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          scrollTop.classList.add('active');
+        } else {
+          scrollTop.classList.remove('active');
+        }
+      });
+      
+      scrollTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Preloader
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        window.addEventListener('load', function() {
+          preloader.remove();
+        });
+      }
+    });
+  </script>
 </body>
-
 </html>
